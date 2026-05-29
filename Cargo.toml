@@ -24,3 +24,7 @@ once_cell = "1.19"
 [dev-dependencies]
 criterion = "0.5"
 tempfile = "3.8"
+
+[[bench]]
+name = "seed_benchmarks"
+harness = false

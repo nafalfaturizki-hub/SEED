@@ -3,9 +3,10 @@
 
 #[cfg(test)]
 mod integration_tests {
-    use sedd_core::core::{StructuralFractalCore, AffineTransformation};
-    use sedd_core::engine::{DataIngestion, ReconstructionEngine, ReconstructionConfig};
-    use sedd_core::storage::{MatrixStore, SerializedTransformation};
+    use crate::core::{StructuralFractalCore};
+    use crate::core::fractal::AffineTransformation;
+    use crate::engine::{DataIngestion, ReconstructionEngine, ReconstructionConfig};
+    use crate::storage::{MatrixStore, SerializedTransformation};
     use nalgebra::{DMatrix, DVector};
 
     #[test]
@@ -68,7 +69,6 @@ mod integration_tests {
 
     #[test]
     fn test_matrix_store_basic() {
-        use std::fs;
         use tempfile::NamedTempFile;
 
         let temp = NamedTempFile::new().expect("Temp file failed");
@@ -148,7 +148,7 @@ mod integration_tests {
 
     #[test]
     fn test_entropy_collapse_integration() {
-        use sedd_core::core::entropy::{calculate_matrix_distance, collapse_transformation, EntropyReducer};
+        use crate::core::entropy::{calculate_matrix_distance, collapse_transformation, EntropyReducer};
 
         let reducer = EntropyReducer::new();
 

@@ -8,6 +8,9 @@ pub mod core;
 pub mod storage;
 pub mod engine;
 
+#[cfg(test)]
+mod integration_test;
+
 use thiserror::Error;
 
 /// Komprehensif error enum untuk seluruh subsistem SEED
